@@ -1,0 +1,75 @@
+{
+    "bikes": [
+      {
+        "id": 1,
+        "name": "Benelli 150S",
+        "image": "images/Benelli-150S.png",
+        "price": 180000,
+        "description": "A stylish and lightweight sportsbike ideal for city rides.",
+        "engine": "149cc, Single-cylinder",
+        "top_speed": "120 km/h",
+        "category": "Entry-level"
+      },
+      {
+        "id": 2,
+        "name": "CF Moto 300",
+        "image": "images/CFMOTO-300NK.png",
+        "price": 450000,
+        "description": "A powerful and stylish 300cc sportsbike with great performance.",
+        "engine": "292cc, Single-cylinder",
+        "top_speed": "160 km/h",
+        "category": "Mid-range"
+      },
+      {
+        "id": 3,
+        "name": "Honda CBR 600",
+        "image": "images/Honda-CBR-600.avif",
+        "price": 1200000,
+        "description": "A high-performance sportsbike known for its speed and agility.",
+        "engine": "599cc, Inline-4",
+        "top_speed": "250 km/h",
+        "category": "Superbike"
+      },
+      {
+        "id": 4,
+        "name": "Kawasaki Ninja 400",
+        "image": "images/Kawasaki-Ninja-400.jpg",
+        "price": 700000,
+        "description": "A lightweight yet powerful bike with smooth handling.",
+        "engine": "399cc, Twin-cylinder",
+        "top_speed": "190 km/h",
+        "category": "Mid-range"
+      },
+      {
+        "id": 5,
+        "name": "KTM Duke 390",
+        "image": "images/KTM-Duke-390.webp",
+        "price": 550000,
+        "description": "An aggressive streetfighter with sharp design and high torque.",
+        "engine": "373cc, Single-cylinder",
+        "top_speed": "170 km/h",
+        "category": "Mid-range"
+      },
+      {
+        "id": 6,
+        "name": "Taro 250",
+        "image": "images/Taro-250.avif",
+        "price": 350000,
+        "description": "A budget-friendly 250cc sportsbike with impressive styling.",
+        "engine": "250cc, Single-cylinder",
+        "top_speed": "140 km/h",
+        "category": "Entry-level"
+      },
+      {
+        "id": 7,
+        "name": "Tekken 250",
+        "image": "images/Tekken-250.avif",
+        "price": 300000,
+        "description": "A dual-purpose bike designed for both on-road and off-road adventures.",
+        "engine": "250cc, Single-cylinder",
+        "top_speed": "130 km/h",
+        "category": "Dual-sport"
+      }
+    ]
+  }
+  
