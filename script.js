@@ -15,7 +15,7 @@ closeShopping.addEventListener('click', function () {
 })
 
 function displayBikes() {
-    fetch("http://localhost:3000/bikes")
+    fetch("https://json-server-bpjr.onrender.com/api/bikes")
         .then(resp => resp.json())
         .then(bikes => {
             bikes.forEach(bike => {
