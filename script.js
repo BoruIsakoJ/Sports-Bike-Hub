@@ -84,30 +84,44 @@ function removeFromCart(id) {
     cart = cart.filter((bike) => bike.id !== id);
     updateCart();
 }
-function checkOut(id) {
-    const form = document.createElement('form')
+function checkOut() {
+    let existingForm = document.querySelector("form");
+    if (existingForm) {
+        existingForm.remove();
+    }
+
+    const form = document.createElement('form');
+    
     form.innerHTML = `
     <div>
-        <label for="name">Name<label>
+        <label for="name">Name</label>
         <input id="name" type="text" placeholder="Omondi Timon" required>
     </div>
     <div>
-        <label for="number">Phone Number<label>
+        <label for="number">Phone Number</label>
         <input id="number" type="text" placeholder="0712345678" required>
     </div>
-    <button type="submit" id="submit-button">Checkout</button>
-    `
-    const submitBtn = document.querySelector("#submit-button")
-    form.addEventListener('submit', function(e){
-        e.preventDefault()
-        const customer ={
+    <button type="submit">Checkout</button>
+    `;
+
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const customer = {
             name: e.target.name.value,
             phone: e.target.number.value
-        }
-        alert( `Congratulations ${customer.name}. Welcome to the Motor.Ke family 🥳`)
-        form.reset()
-        body.classList.remove("active")
-    })
-    divCart.appendChild(form)
+        };
 
+        alert(`Congratulations ${customer.name}. Welcome to the Motor.Ke family 🥳`);
+        cart = [];
+        updateCart();
+        form.remove();
+    });
+
+    divCart.appendChild(form);
+
+    // Show the form when "Proceed to Checkout" is clicked
+    form.style.display = "block";
 }
+
