@@ -19,7 +19,7 @@ Check out the live website [Sports Bikes Hub](https://boruisakoj.github.io/Sport
 ## Setup Instructions
 1. Clone the repository:
    ```sh
-   git clone https://github.com/your-username/sports-bike-hub.git
+   git clone https://github.com/BoruIsakoJ/Sports-Bike-Hub.git
    ```
 2. Navigate to the project folder:
    ```sh
