@@ -123,6 +123,7 @@ nav .shopping{
     background-color: white;
     box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.2);
     height: 100vh;
+    z-index: 2;
 }
 .active .cart{
     right: 0;
