@@ -39,7 +39,7 @@ nav .shopping{
     
 }
 .shopping span{
-    background-color: #ff5733;
+    background-color: orangered;
     border-radius: 50%;
     color: white;
     padding: 3px 9px;
@@ -51,26 +51,31 @@ nav .shopping{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 100vh;
+    height: 92vh;
     padding: 0 10%;
 }
 .left-section {
-    width: 40%;
+    width: 50%;
 }
 .left-section h2 {
     font-size: 43px;
     font-weight: bold;
     color: #333;
     margin-bottom: 10px;
+    text-shadow: 5px 5px 10px rgba(128, 128, 128, 0.6);
 }
 .left-section p {
     font-size: 18px;
     color: #555;
     margin-bottom: 20px;
+    text-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+#explore{
+    padding-top: 80px;
 }
 .explore-button {
     display: inline-block;
-    background: #ff5733;
+    background: orangered;
     color: white;
     padding: 12px 30px;
     font-size: 20px;
@@ -81,20 +86,19 @@ nav .shopping{
 }
 .explore-button:hover {
     background: white;
-    color: #ff5733;
-    border: 1px solid #ff5733;
+    color: orangered;
+    border: 1px solid orangered;
     transform: scale(1.05);
 }
 .right-section {
-    width: 60%;
+    width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .right-section img {
-    width: 100%;
-    max-width: 600px;
-
+    z-index: -2;
+    max-width: 500px;
 }
 #explore h2 {
     text-align: center;
@@ -114,14 +118,14 @@ nav .shopping{
 .cart {
     position: fixed;
     top: 0;
-    left: 100%;
-    width: 500px;
+    right: -400px;
+    width: 400px;
     background-color: white;
     box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.2);
     height: 100vh;
 }
 .active .cart{
-    left: calc(100% - 500px);
+    right: 0;
 }
 .active nav{
     transform: translateX(-200px);
@@ -197,12 +201,16 @@ nav .shopping{
     color: #666;
     margin-bottom: 5px;
 }
-
-.list .item button {
+.button-container{
+    display: flex;
+    width: 100%;
+    gap:10px
+}
+button.add-btn {
     background-color: #560bad;
     color: white;
     border: 1px solid #560bad;
-    width: 60%;
+    width: 70%;
     padding: 10px 15px;
     margin-top: 10px;
     border-radius: 5px;
@@ -212,11 +220,35 @@ nav .shopping{
     font-weight: 600;
 }
 
-.list .item button:hover {
+button.add-btn:hover {
     color: #560bad;
     background-color: white;
     border: 1px solid #560bad;
 }
+.like-btn span{
+    font-size: 16px;
+}
+.like-btn {
+    border: 1px solid red;
+    background: transparent;
+    width: 30%;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    padding: 7px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out, color 0.3s;
+}
+
+.like-btn.liked {
+    color: red;
+    animation: pulse .4s ease-in-out;
+}
+
 .remove-button{
     border: 1px solid red;
     padding: 4px 8px;

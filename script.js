@@ -33,8 +33,11 @@ function displayBike(bike) {
     <div class ="engine"><span>Engine: </span>${bike.engine}</div>
     <div class="topSpeed"><span>Top Speed: </span>${bike.top_speed}</div>
     <div class="category"><span>Type: </span>${bike.category}</div>
-    <button onclick="addToCart(${bike.id}, '${bike.name}', ${bike.price}, '${bike.image}')">Add To Cart</button>
-  `
+    <div class="button-container">
+    <button class="add-btn" onclick="addToCart(${bike.id}, '${bike.name}', ${bike.price}, '${bike.image}')">Add To Cart</button>
+    <button class="like-btn" onclick="toggleLike(${bike.id}, this)">&#10084; <span>${bike.likes}</span></button>
+    </div>
+    `
     list.appendChild(newDiv)
 }
 displayBikes()
@@ -51,6 +54,25 @@ function addToCart(id, name, price, image) {
     }
 
     updateCart();
+}
+function toggleLike(bikeId, button) {
+    fetch(`https://json-server-bpjr.onrender.com/api/bikes/${bikeId}`)
+        .then(resp => resp.json())
+        .then(bike => {
+            let currentLikes = parseInt(button.querySelector("span").textContent);
+            let newLikes = button.classList.contains("liked") ? currentLikes - 1 : currentLikes + 1;
+
+            fetch(`https://json-server-bpjr.onrender.com/api/bikes/${bikeId}`, {
+                method: "PATCH",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ likes: newLikes })
+            })
+            .then(resp => resp.json())
+            .then(updatedBike => {
+                button.querySelector("span").textContent = updatedBike.likes;
+                button.classList.toggle("liked");
+            });
+        });
 }
 
 function updateCart() {
@@ -83,6 +105,11 @@ function updateCart() {
 function removeFromCart(id) {
     cart = cart.filter((bike) => bike.id !== id);
     updateCart();
+
+    let existingForm = document.querySelector("form");
+    if (existingForm) {
+        existingForm.remove();
+    }
 }
 function checkOut() {
     let existingForm = document.querySelector("form");
@@ -117,11 +144,11 @@ function checkOut() {
         cart = [];
         updateCart();
         form.remove();
+        body.classList.remove("active");
     });
 
     divCart.appendChild(form);
 
-    // Show the form when "Proceed to Checkout" is clicked
     form.style.display = "block";
 }
 
